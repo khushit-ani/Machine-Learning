@@ -13,7 +13,6 @@ print("Enter 5 y values:")
 for i in range(5):
     y.append(float(input()))
 
-# Convert to NumPy arrays
 x = np.array(x)
 y = np.array(y)
 
@@ -21,16 +20,16 @@ n = len(x)
 
 sum_x = np.sum(x)
 sum_y = np.sum(y)
-sum_xy = np.sum(x * y)
-sum_x2 = np.sum(x * x)
+sum_xy = np.sum(x*y)
+sum_x2 = np.sum(x*x)
 
-m = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x ** 2)
+m = (n*sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x ** 2)
 c = (sum_y - m * sum_x) / n
 
 print("\nRegression Equation:")
 print(f"y = {m}x + {c}")
 
-y_pred = m * x + c
+y_pred = m*x + c
 
 print("\nIndividual Errors:")
 for i in range(n):
