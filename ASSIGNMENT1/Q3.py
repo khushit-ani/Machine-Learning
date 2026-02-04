@@ -35,9 +35,19 @@ print("\nIndividual Errors:")
 for i in range(n):
     print(f"Point ({x[i]}, {y[i]}): Error = {y[i] - y_pred[i]}")
 
-plt.scatter(x, y)
-plt.plot(x, y_pred)
+total_error = np.sum((y - y_pred) ** 2)
+print("Total Error (SSE):", total_error)
+
+plt.scatter(x, y, marker='o', label='Actual Data')
+
+plt.plot(x, y_pred, label='Regression Line')
+
 plt.xlabel("X values")
 plt.ylabel("Y values")
 plt.title("Linear Regression with Individual Errors")
+
+plt.grid(True)
+plt.legend()
+
+plt.tight_layout()
 plt.show()
